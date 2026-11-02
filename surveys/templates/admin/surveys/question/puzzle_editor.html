@@ -1,0 +1,13 @@
+<div class="puzzle-author" data-puzzle-editor>
+<p class="editor-empty">Загрузите изображение выше: оно сразу появится здесь, сохранять вопрос для этого не нужно.</p>
+<div class="editor-content" hidden>
+<h3>1. Выберите место фрагмента</h3><p>Нажмите на картинку или перетащите рамку. Числа положения выше обновятся автоматически.</p>
+<div class="editor-board" tabindex="0" role="group" aria-label="Выбор места фрагмента; точное положение можно задать числовыми полями выше"><img class="editor-image" {% if q.puzzle_image %}src="{{ q.puzzle_image.url }}"{% endif %} alt="Выбор области пазла" draggable="false"><div class="editor-selection" aria-hidden="true"></div></div>
+<p class="editor-coordinates" aria-live="polite"></p>
+<h3>2. Попробуйте собрать пазл</h3>
+<div class="puzzle" data-puzzle data-target="{{ q.puzzle_target|default_if_none:65 }}" data-y="{{ q.puzzle_y|default_if_none:50 }}">
+<div class="puzzle-board"><img class="puzzle-image" {% if q.puzzle_image %}src="{{ q.puzzle_image.url }}"{% endif %} alt="Предпросмотр пазла" draggable="false"><div class="puzzle-hole" aria-hidden="true"></div><div class="puzzle-piece" aria-hidden="true"></div></div>
+<div class="range puzzle-controls"><label for="puzzle-editor-trial">Положение фрагмента в предпросмотре</label><input id="puzzle-editor-trial" type="range" min="0" max="100" value="0" aria-label="Положение фрагмента в предпросмотре"><output for="puzzle-editor-trial">0</output></div>
+<p class="puzzle-error" role="status" hidden>Изображение не загрузилось.</p></div>
+<p class="editor-status" role="status">Изменения будут записаны после сохранения вопроса.</p>
+</div><noscript>Для визуальной настройки включите JavaScript. Положение можно задать числами выше.</noscript></div>

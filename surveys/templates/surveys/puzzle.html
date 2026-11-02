@@ -1,0 +1,6 @@
+<div class="puzzle" data-puzzle data-target="{{ q.puzzle_target }}" data-y="{{ q.puzzle_y }}">
+<p class="puzzle-help" id="puzzle-help-{{ q.pk }}">Двигайте ползунок, пока фрагмент не совместится с затемнённым местом. Можно использовать стрелки на клавиатуре.</p>
+{% if q.puzzle_image %}<div class="puzzle-board"><img class="puzzle-image" src="{{ q.puzzle_image.url }}" alt="Изображение для задания: {{ q.title }}" draggable="false"><div class="puzzle-hole" aria-hidden="true"></div><div class="puzzle-piece" aria-hidden="true"></div></div>
+<div class="range puzzle-controls"><label for="{{ field.id_for_label }}">Положение фрагмента</label>{{ field }}<output for="{{ field.id_for_label }}">{{ field.value|default_if_none:0 }}</output></div>
+<noscript><p>Для перемещения фрагмента включите JavaScript в браузере.</p></noscript><p class="puzzle-error" role="status" hidden>Изображение не загрузилось. Обновите страницу или сообщите автору опроса.</p>
+{% else %}<p>Автор ещё не загрузил изображение для этого задания.</p>{% endif %}</div>

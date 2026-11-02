@@ -1,0 +1,2 @@
+{% extends 'admin/change_form.html' %}
+{% block form_top %}{% if parent_survey %}<a class="author-back" href="{% url 'admin:surveys_survey_change' parent_survey.pk %}">← К опросу «{{ parent_survey.title }}»</a>{% endif %}<p class="author-note">Выберите тип вопроса — ниже появятся его настройки. После сохранения вы вернётесь к опросу.</p>{% endblock %}
